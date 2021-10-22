@@ -9,6 +9,10 @@ using namespace std;
 void demoPrintUsingIterators();
 void demoPrintFunctions();
 
+//method declaration
+template <typename Iter>
+void print_temp(Iter iter, Iter end);
+
 void print(list<int> theList) {
 	for (int x : theList)
 		cout << x << endl;
@@ -27,7 +31,7 @@ void print(T theList) {
 }
 
 template <typename Iter>
-void print(Iter iter, Iter end) {
+void print_temp(Iter iter, Iter end) {
 	while (iter != end) {
 		cout << *iter << endl;
 		iter++;
@@ -132,5 +136,18 @@ void demoPrintFunctions()
 
 	print(rstart, rend);
 
-	cout << endl;
+	cout << "++++++++++++" << endl;
+
+	//print all FORWARD with new template print
+	start = intList.begin();
+	end = intList.end();
+	print_temp(start, end);
+
+	//print using template function with doubles
+	list<double> dblList = { 2.55, 5.7, 8.01, 9.99, 10.234 };
+	print_temp(dblList.begin(), dblList.end());
+
+	//reverse print using template function with chars
+	list<char> charList = { 'a','e','i','o', 'u' };
+	print_temp(charList.rbegin(), charList.rend());
 }
