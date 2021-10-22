@@ -15,5 +15,19 @@ int main()
 
 void demoUsingListIterators()
 {
-	list<int> intList = { 1,2,3,4,5,6,7,8,9,10 };
+	list<int> intList = { 7,8,9,10 };
+
+	for (int x : intList)
+		cout << x << endl;
+
+	for (auto x : intList)
+		cout << x << endl;
+
+	list<int>::iterator iter = intList.begin();
+
+	while (iter != intList.end())
+	{
+		cout << *iter << endl;
+		iter++;
+	}
 }
