@@ -14,6 +14,26 @@ void print(list<int> theList) {
 		cout << x << endl;
 }
 
+template <typename T>
+void print(list<T> theList) {
+	for (T x : theList)
+		cout << x << endl;
+}
+
+template <typename T, typename E>
+void print(T theList) {
+	for (E x : theList)
+		cout << x << endl;
+}
+
+template <typename Iter>
+void print(Iter iter, Iter end) {
+	while (iter != end) {
+		cout << *iter << endl;
+		iter++;
+	}
+}
+
 void print(list<int>::iterator iter, list<int>::iterator end) {
 	while (iter != end) {
 		cout << *iter << endl;
