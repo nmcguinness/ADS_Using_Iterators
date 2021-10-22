@@ -20,6 +20,13 @@ void print(list<int>::iterator iter, list<int>::iterator end) {
 	}
 }
 
+void print(list<int>::reverse_iterator iter, list<int>::reverse_iterator end) {
+	while (iter != end) {
+		cout << *iter << endl;
+		iter++;
+	}
+}
+
 int main()
 {
 	demoUsingListIterators();
@@ -33,11 +40,15 @@ void demoUsingListIterators()
 	//print all with new iter print
 	auto start = intList.begin();
 	auto end = intList.end();
+
+	advance(start, 2);
+	advance(end, -2);
 	print(start, end);
 
-	//advance and print a subset
-	advance(start, 2);
-	print(start, end);
+	auto rstart = intList.rbegin(); //ptr to end
+	auto rend = intList.rend();		//ptr to begin
+
+	print(rend, rstart);
 
 #pragma region Loop demos
 
