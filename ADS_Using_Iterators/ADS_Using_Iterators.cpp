@@ -102,11 +102,4 @@ void demoPrintFunctions()
 	print(rstart, rend);
 
 	cout << endl;
-
-	//print SUBSET in REVERSE with new reverse_iterator print
-	rstart = intList.rbegin(); //ptr to end
-	rend = intList.rend();		//ptr to begin
-	advance(rstart, 2);
-	advance(rend, -2);
-	print(rstart, rend);
 }
