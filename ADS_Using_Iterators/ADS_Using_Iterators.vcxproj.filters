@@ -18,9 +18,18 @@
     <ClCompile Include="ADS_Using_Iterators.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pair.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ADS_Using_Iterators.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pair.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

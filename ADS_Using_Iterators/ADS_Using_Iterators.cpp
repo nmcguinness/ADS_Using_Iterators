@@ -1,56 +1,12 @@
-// ADS_Using_Iterators.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
-#include "ADS_Using_Iterators.h"
 #include <list>
+#include "ADS_Using_Iterators.h"
+#include "Utilities.h"
+
 using namespace std;
 
 void demoPrintUsingIterators();
 void demoPrintFunctions();
-
-//method declaration
-template <typename Iter>
-void print_temp(Iter iter, Iter end);
-
-void print(list<int> theList) {
-	for (int x : theList)
-		cout << x << endl;
-}
-
-template <typename T>
-void print(list<T> theList) {
-	for (T x : theList)
-		cout << x << endl;
-}
-
-template <typename T, typename E>
-void print(T theList) {
-	for (E x : theList)
-		cout << x << endl;
-}
-
-template <typename Iter>
-void print_temp(Iter iter, Iter end) {
-	while (iter != end) {
-		cout << *iter << endl;
-		iter++;
-	}
-}
-
-void print(list<int>::iterator iter, list<int>::iterator end) {
-	while (iter != end) {
-		cout << *iter << endl;
-		iter++;
-	}
-}
-
-void print(list<int>::reverse_iterator iter, list<int>::reverse_iterator end) {
-	while (iter != end) {
-		cout << *iter << endl;
-		iter++;
-	}
-}
 
 int main()
 {

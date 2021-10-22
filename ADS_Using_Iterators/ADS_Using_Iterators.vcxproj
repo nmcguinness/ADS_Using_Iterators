@@ -140,9 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ADS_Using_Iterators.cpp" />
+    <ClCompile Include="Pair.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ADS_Using_Iterators.h" />
+    <ClInclude Include="Pair.h" />
+    <ClInclude Include="Utilities.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
