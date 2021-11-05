@@ -5,22 +5,40 @@
 
 using namespace std;
 
+void demoPrintUsingFor();
 void demoPrintUsingIterators();
 void demoPrintFunctions();
+void demoConstIterators();
 
 int main()
 {
-	//demoPrintUsingIterators();
+	cout << "demoPrintUsingFor............." << endl;
+	demoPrintUsingFor();
+
+	cout << "demoPrintUsingIterators......." << endl;
+	demoPrintUsingIterators();
+
+	cout << "demoPrintFunctions............" << endl;
 	demoPrintFunctions();
+
+	cout << "demoConstIterators............" << endl;
+	demoConstIterators();
 }
 
 /// @brief Demos different methods of printing a list
-void demoPrintUsingIterators()
+void demoPrintUsingFor()
 {
 	list<int> intList = { 1,2,3,4,5,6 };
 
+	////traditional for(int) loop
+	//int length = intList.size();
+	//for (int i = 0; i < length; i++)
+	//{
+	//	cout << intList[i] << endl; //list doesn't have a [] or get() or at[] - we must use an iterator
+	//}
+
 	//loop and print
-	for (int x : intList)
+	for (int x : intList)  //foreach(int x in intList)
 		cout << x << endl;
 
 	cout << endl;
@@ -30,8 +48,13 @@ void demoPrintUsingIterators()
 		cout << x << endl;
 
 	cout << endl;
+}
 
-	//loop and print
+void demoPrintUsingIterators()
+{
+	list<int> intList = { 1,2,3,4,5,6 };
+
+	//loop and print FORWARDS using iterator
 	list<int>::iterator iter = intList.begin();
 	while (iter != intList.end())
 	{
@@ -41,11 +64,37 @@ void demoPrintUsingIterators()
 
 	cout << endl;
 
-	//loop and print
+	//loop and print BACKWARDS using iterators
 	auto it = intList.end();
 	while (it != intList.begin()) {
 		it--;
 		cout << *it << endl;
+	}
+}
+
+//constant iterator - cbegin, cend
+void demoConstIterators()
+{
+	list<int> intList1 = { 1,2,3,4,5,6 };
+	list<int>::iterator constIt1 = intList1.begin();
+
+	// display vector elements using const_iterator
+	while (constIt1 != intList1.end()) {
+		cout << *constIt1 << endl;
+		*constIt1 += 10;
+		constIt1++;
+	}
+
+	list<int> intList2 = { 1,2,3,4,5,6 };
+	list<int>::const_iterator constIt2 = intList2.cbegin();
+
+	// display vector elements using const_iterator
+	while (constIt2 != intList2.end()) {
+		cout << *constIt2 << endl;
+
+		//line below will not compile
+		//*constIt2 += 10;
+		constIt2++;
 	}
 }
 

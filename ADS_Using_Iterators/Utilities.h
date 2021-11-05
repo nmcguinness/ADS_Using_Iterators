@@ -28,6 +28,7 @@ template <typename Iter>
 void print_temp(Iter iter, Iter end) {
 	while (iter != end) {
 		cout << *iter << endl;
+		//make these iterators point to some other local data structure
 		iter++;
 	}
 }
