@@ -98,6 +98,47 @@ void demoConstIterators()
 	}
 }
 
+//int, list, modify, know search function
+int search(list<int>::iterator iter, list<int>::iterator end, int target)
+{
+	int index = 0;
+	while (iter != end) {
+		if (target == *iter)
+			return index;
+		index++;
+	}
+	return -1;
+}
+
+//template <typename T>
+//int search(list<T>::const_iterator iter, list<T>::const_iterator end, T target)
+//{
+//	int index = 0;
+//	while (iter != end) {
+//		if (target == *iter)
+//			return index;
+//		index++;
+//	}
+//	return -1;
+//}
+
+template <typename Iter, typename Target>
+int search(Iter iter, Iter end, Target target)
+{
+	int index = 0;
+	while (iter != end) {
+		if (target == *iter)
+			return index;
+		index++;
+	}
+	return -1;
+}
+
+void demoSearchConstIterator()
+{
+	//TODO - list, stack, queue of primitive type, struct (Person), class (Connection) and use search<T>() to find a target
+}
+
 /// @brief Demos how we can write many forms of a print function (i.e. using iterators, using templates)
 void demoPrintFunctions()
 {
